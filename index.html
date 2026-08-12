@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RD Estoque Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <h2>RD <span>ESTOQUE</span></h2>
+  <a href="#" class="active">🏠 Dashboard</a>
+  <a href="#">📦 Produtos</a>
+  <a href="#">📊 Relatórios</a>
+  <a href="#">⚙️ Configurações</a>
+</div>
+
+<div class="main">
+  <div class="topbar">
+    <div class="badge">📱 100% Web</div>
+    <div class="badge">⚡ Rápido</div>
+    <div class="badge">🛡️ Seguro</div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-text">
+      <h1>SISTEMA DE <span>ESTOQUE</span></h1>
+      <p>Simples e completo para conveniências e pequenos comércios.</p>
+
+      <ul>
+        <li>✔ Cadastro de produtos</li>
+        <li>✔ Controle de estoque</li>
+        <li>✔ Valor total do estoque</li>
+        <li>✔ Exportar para Excel</li>
+        <li>✔ Funciona no celular e PC</li>
+      </ul>
+
+      <button>COMEÇAR AGORA</button>
+    </div>
+
+    <div class="hero-image">
+      <div class="mock-card"></div>
+      <div class="mock-phone"></div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span>Produtos</span>
+      <h3 id="totalProdutos">0</h3>
+    </div>
+    <div class="card">
+      <span>Quantidade</span>
+      <h3 id="totalQtd">0</h3>
+    </div>
+    <div class="card">
+      <span>Valor Total</span>
+      <h3 id="totalValor">R$ 0,00</h3>
+    </div>
+    <div class="card">
+      <span>Estoque baixo</span>
+      <h3 id="estoqueBaixo">0</h3>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <input type="text" id="nome" placeholder="Nome do produto">
+    <input type="number" id="qtd" placeholder="Quantidade">
+    <input type="number" id="preco" step="0.01" placeholder="Preço">
+    <button onclick="adicionar()">+ Adicionar</button>
+    <button class="excel" onclick="exportar()">Exportar Excel</button>
+  </div>
+
+  <div class="tabela">
+    <table>
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th>Total</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="lista"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
