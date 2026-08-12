@@ -1,236 +1,116 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
 body{
-  display:flex;
-  background:#071428;
+  margin:0;
+  font-family:Arial;
+  background:#0f172a;
   color:white;
-  min-height:100vh;
 }
-
-.sidebar{
-  width:240px;
-  background:#06101f;
-  padding:20px;
-  position:fixed;
-  height:100%;
-}
-
-.sidebar h2{
-  margin-bottom:30px;
-}
-
-.sidebar span{
-  color:#3b82f6;
-}
-
-.sidebar a{
-  display:block;
-  color:white;
-  text-decoration:none;
-  padding:12px;
-  border-radius:10px;
-  margin-bottom:10px;
-}
-
-.sidebar a.active,
-.sidebar a:hover{
-  background:#2563eb;
-}
-
-.main{
-  margin-left:240px;
-  padding:25px;
-  width:100%;
-}
-
-.topbar{
-  display:flex;
-  gap:10px;
-  margin-bottom:20px;
-}
-
-.badge{
-  background:#2563eb;
-  padding:10px 14px;
-  border-radius:10px;
-  font-weight:bold;
-}
-
-.hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  background:#0b1730;
-  border-radius:20px;
+.hidden{display:none}
+.login-box{
+  width:300px;
+  margin:100px auto;
+  background:#111827;
   padding:30px;
-  margin-bottom:25px;
+  border-radius:20px;
+  text-align:center;
 }
-
-.hero h1{
-  font-size:48px;
-  margin-bottom:10px;
+.login-box input,.toolbar input,#busca{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border:none;
+  border-radius:10px;
 }
-
-.hero h1 span{
-  color:#3b82f6;
-}
-
-.hero p{
-  color:#cbd5e1;
-  margin-bottom:15px;
-}
-
-.hero ul{
-  margin-bottom:20px;
-  line-height:1.8;
-}
-
-.hero button{
+.login-box button,.toolbar button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
   background:#2563eb;
   color:white;
-  border:none;
-  padding:14px 22px;
-  border-radius:12px;
   font-weight:bold;
   cursor:pointer;
 }
-
-.hero-image{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.excel{background:#059669 !important}
+.sidebar{
+  width:220px;
+  background:#111827;
+  height:100vh;
+  position:fixed;
+  padding:20px;
 }
-
-.mock-card{
-  width:320px;
-  height:190px;
-  background:linear-gradient(135deg,#2563eb,#0f172a);
-  border-radius:20px;
+.sidebar span{color:#3b82f6}
+.main{
+  margin-left:240px;
+  padding:20px;
 }
-
-.mock-phone{
-  width:90px;
-  height:170px;
-  background:#020617;
-  border:4px solid white;
-  border-radius:22px;
-  position:absolute;
-  right:40px;
-  bottom:-10px;
+.topbar{
+  margin-bottom:20px;
 }
-
 .cards{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:15px;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
-
 .card{
-  background:white;
-  color:#111827;
+  background:#1e293b;
   padding:20px;
   border-radius:18px;
 }
-
 .card span{
-  color:#64748b;
+  color:#94a3b8;
   font-size:14px;
 }
-
 .card h3{
   font-size:28px;
   margin-top:10px;
 }
-
 .toolbar{
-  display:flex;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   gap:10px;
-  flex-wrap:wrap;
   margin-bottom:20px;
 }
-
-.toolbar input{
-  flex:1;
-  min-width:160px;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-}
-
-.toolbar button{
-  background:#2563eb;
-  color:white;
-  border:none;
-  padding:12px 18px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.toolbar .excel{
-  background:#059669;
-}
-
 .tabela{
-  background:white;
-  border-radius:18px;
+  background:#111827;
+  border-radius:20px;
   overflow:auto;
 }
-
 table{
   width:100%;
   border-collapse:collapse;
-  color:#111827;
 }
-
 th,td{
   padding:14px;
-  border-bottom:1px solid #e5e7eb;
+  border-bottom:1px solid #1e293b;
+}
+th{
+  background:#1e293b;
   text-align:left;
 }
-
-th{
-  background:#f8fafc;
+.acao{
+  display:flex;
+  gap:6px;
 }
-
-.excluir{
-  background:#ef4444;
-  color:white;
+.acao button{
+  padding:6px 10px;
   border:none;
-  padding:8px 12px;
   border-radius:8px;
   cursor:pointer;
 }
-
-@media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-  }
-  .cards{
-    grid-template-columns:1fr 1fr;
-  }
+.editar{background:#2563eb;color:white}
+.excluir{background:#ef4444;color:white}
+.light{
+  background:#f1f5f9;
+  color:#111827;
 }
-
-@media(max-width:700px){
-  body{
-    flex-direction:column;
-  }
-  .sidebar{
-    position:relative;
-    width:100%;
-    height:auto;
-  }
-  .main{
-    margin-left:0;
-  }
-  .cards{
-    grid-template-columns:1fr;
-  }
+.light .sidebar,
+.light .tabela,
+.light .login-box{
+  background:white;
+  color:#111827;
+}
+.light .card{
+  background:white;
+  color:#111827;
 }
